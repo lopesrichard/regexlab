@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+body {
+    font-family: 'Indie Flower', cursive;
+}
+
+.main-title {
+    margin: 30px 0px 30px 0px;
+    text-align: center;
+}
+
+.have-fun {
+    text-align: center;
+    color: blueviolet;
+    font-size: 1.2em;
+}
+
+.label {
+    font-size: 1.5em;
+}
+
+.input {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.input.result {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    letter-spacing: -1px !important;
+    height: 50px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.btn-copy {
+    width: 40px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: blueviolet;
+    transition: 0.5s;
+}
+
+.btn-copy:hover {
+    cursor: pointer;
+    background-color: rgb(2, 191, 248);
+}
+
+.icon-btn-copy {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 14px;
+    left: 0;
+}

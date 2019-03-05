@@ -1,0 +1,36 @@
+{
+    "name": "lopesrichard/regexlab",
+    "description": "Soluções em Expressões Regulares.",
+    "keywords": ["regex", "composer", "php"],
+    "license": "MIT",
+    "homepage": "https://github.com/lopesrichard/regexlab",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Richard Lopes",
+            "email": "contato.richardlopes@outlook.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7",
+        "slim/slim": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "php-coveralls/php-coveralls": "^2"
+    },
+    "autoload": {
+        "psr-4": {
+            "RegexLab\\NumberRange\\": [
+                "app/src/range/number/classes",
+                "app/tests/range/number/classes"
+            ],
+            "RegexLab\\DateRange\\": [
+                "app/src/range/date/classes",
+                "app/tests/range/date/classes"
+            ]
+        }
+    }
+}
