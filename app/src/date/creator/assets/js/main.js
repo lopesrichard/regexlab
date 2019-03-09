@@ -24,7 +24,7 @@ function sendForm(form) {
     cleanErrors();
     let formData = new FormData(form);
     if (receivedAll(formData) && validateRange(formData)) {
-        let ajax = new Ajax('http://localhost/regexlab/app/src/date/creator/api/v1.php');
+        let ajax = new Ajax('https://regex-lab.herokuapp.com/date/creator/api/v1.php');
         ajax.before(function(){
             setLoading();
         }).after(function(){
