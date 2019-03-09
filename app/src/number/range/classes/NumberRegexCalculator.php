@@ -41,7 +41,7 @@ class NumberRegexCalculator
             $prefix = self::$desc > 0 ? substr($this->to, 0, self::$desc) : '';
 
             $middle = substr($this->to, self::$desc, 1);
-            $middle = substr($this->to, self::$desc + 1, 1) == 9 ? $middle : $middle - 1;
+            $middle = $this->to == str_pad('', strlen($this->to), '9') ? $middle : $middle - 1;
 
             $suffix = str_pad('', strlen($this->from) - (self::$desc++ + 1), 9);
             $result = $prefix . $middle . $suffix;
