@@ -24,12 +24,12 @@
     "autoload": {
         "psr-4": {
             "RegexLab\\NumberRange\\": [
-                "app/src/range/number/classes",
-                "app/tests/range/number/classes"
+                "app/src/number/range/classes",
+                "app/tests/number/range/classes"
             ],
-            "RegexLab\\DateRange\\": [
-                "app/src/range/date/classes",
-                "app/tests/range/date/classes"
+            "RegexLab\\DateCreator\\": [
+                "app/src/date/creator/classes",
+                "app/tests/date/creator/classes"
             ]
         }
     }
