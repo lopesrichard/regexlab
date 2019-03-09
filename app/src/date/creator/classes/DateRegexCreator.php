@@ -88,7 +88,7 @@ class DateRegexCreator
 
     private function getSmallYear($from, $to)
     {
-        $url = 'https://regex-lab.herokuapp.com/range/number/api/v1.php';
+        $url = 'https://regex-lab.herokuapp.com/number/range/api/v1.php';
 
         if ($from <= $to)
             return $ret = json_decode(file_get_contents($url."/{$from}/{$to}"), true);
