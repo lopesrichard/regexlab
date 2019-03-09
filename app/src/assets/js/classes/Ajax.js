@@ -16,9 +16,11 @@ class Ajax {
     }
 
     post(responseType, data) {
-        data = this.mapDataToSend(data);
+        if (!(data instanceof FormData)) {
+            data = this.mapDataToSend(data);
+            this.xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        }
         this.prepare('POST', responseType);
-        this.xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         this.xhttp.send(data);
     }
 

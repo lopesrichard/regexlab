@@ -39,7 +39,10 @@ class NumberRegexCalculator
         do {
             $limit = self::$desc == strlen($this->to) - 1;
             $prefix = self::$desc > 0 ? substr($this->to, 0, self::$desc) : '';
-            $middle = substr($this->to, self::$desc, 1) - 1;
+
+            $middle = substr($this->to, self::$desc, 1);
+            $middle = substr($this->to, self::$desc + 1, 1) == 9 ? $middle : $middle - 1;
+
             $suffix = str_pad('', strlen($this->from) - (self::$desc++ + 1), 9);
             $result = $prefix . $middle . $suffix;
         } while (preg_match('/^0+|-/', $result));

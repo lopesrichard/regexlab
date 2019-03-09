@@ -19,7 +19,7 @@ function setResult() {
     if (parseInt(from.value) > parseInt(to.value))
         return false;
 
-    const ajax = new Ajax(`https://regex-lab.herokuapp.com/range/number/api/v1.php/${from.value}/${to.value}`);
+    const ajax = new Ajax(`https://regex-lab.herokuapp.com/number/range/api/v1.php/${from.value}/${to.value}`);
     ajax.success(function(response) {
         if (!response || response.status != 'true') {
             document.getElementById('result').innerHTML = '';

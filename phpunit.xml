@@ -6,7 +6,7 @@
 			stopOnFailure="true">
 			<testsuites>
 				<testsuite name="Unit Tests">
-					<directory>app/tests/range/number/classes</directory>
+					<directory>app/tests/number/range/classes</directory>
 				</testsuite>
 			</testsuites>
 
