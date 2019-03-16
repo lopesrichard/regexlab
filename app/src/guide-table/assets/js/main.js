@@ -5,11 +5,6 @@ const tablePossessive = document.getElementById('table-possessive');
 const tableMethods    = document.getElementById('table-methods');
 
 const tables  = [tableMethods, tableMain, tableGreedy, tableReluctant, tablePossessive];
-tables.forEach(table => {
-    const animator = new Animator(table, 500);
-    const evt      = new EventManager(table);
-    evt.hover(() => animator.zoomIn(1.2), () => animator.zoomOut(1.2));
-});
 
 const options = {
     php: {
