@@ -23,7 +23,10 @@
         <a href="https://regex-lab.herokuapp.com/number/range/"><img class="image" src="assets/image/number-range.png" alt="Number Range"></a>
       </div>
       <div class="m-4">
-        <a href="https://regex-lab.herokuapp.com/date/creator/"><img class="image" src="assets/image/date-creator.png" alt="Number Range"></a>
+        <a href="https://regex-lab.herokuapp.com/date/creator/"><img class="image" src="assets/image/date-creator.png" alt="Date Creator"></a>
+      </div>
+      <div class="m-4">
+        <a href="https://regex-lab.herokuapp.com/guide-table/"><img class="image" src="assets/image/guide-table.png" alt="Guide Table"></a>
       </div>
     </div>
     <div class="col-12">

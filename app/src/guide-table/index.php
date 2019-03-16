@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/main-style.min.css">
+  <link rel="stylesheet" href="assets/css/style.min.css">
+  <title>RegexLab</title>
+</head>
+<body>
+  <div class="container">
+        <div class="col-12 my-3 text-right">
+            <label for="fonts">Page Font: </label>
+            <select id="fonts"></select>
+        </div>
+    <h1 class="title">Regex Guide Table</h1>
+    <p class="description">Just swipe =)<p>
+    <div id="range-slider" class="range-slider mt-2 mb-5">
+        <input class="range-slider__range" type="range" value="1" min="1" max="2" step="1"  name="slider">
+        <span class="range-slider__value"></span>
+    </div>
+
+    <table id="table-methods" class="table table-bordered my-3 text-center">
+        <thead>
+            <tr>
+                <th class="t1" colspan="4">Methods/Functions</th>
+            </tr>
+            <tr>
+                <th class="t2">Search</th>
+                <th class="t2">Substitution</th>
+                <th class="t2">Division</th>
+                <th class="t2">Raw Expression</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table id="table-main" class="table table-bordered mb-3 text-center">
+        <thead>
+            <tr>
+                <th class="t1" colspan="10">Main Characters</th>
+            </tr>
+            <tr>
+                <th class="t2">Escape</th>
+                <th class="t2">Beginning</th>
+                <th class="t2">End</th>
+                <th class="t2">Period</th>
+                <th class="t2">Set</th>
+                <th class="t2">Negated Set</th>
+                <th class="t2">Word Boudaries</th>
+                <th class="t2">Or</th>
+                <th class="t2">Group</th>
+                <th class="t2">Back Reference</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table id="table-greedy" class="table table-bordered my-3 text-center">
+        <thead>
+            <tr>
+                <th class="t1" colspan="6">Greedy Quantifiers</th>
+            </tr>
+            <tr>
+                <th class="t2">Zero or One</th>
+                <th class="t2">Zero or More</th>
+                <th class="t2">One or More</th>
+                <th class="t2">Between</th>
+                <th class="t2">At Least</th>
+                <th class="t2">At Most</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table id="table-reluctant" class="table table-bordered my-3 text-center">
+        <thead>
+            <tr>
+                <th class="t1" colspan="6">Reluctant Quantifiers</th>
+            </tr>
+            <tr>
+                <th class="t2">Zero or One</th>
+                <th class="t2">Zero or More</th>
+                <th class="t2">One or More</th>
+                <th class="t2">Between</th>
+                <th class="t2">At Least</th>
+                <th class="t2">At Most</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table id="table-possessive" class="table table-bordered my-3 text-center">
+        <thead>
+            <tr>
+                <th class="t1" colspan="6">Possessive Quantifiers</th>
+            </tr>
+            <tr>
+                <th class="t2">Zero or One</th>
+                <th class="t2">Zero or More</th>
+                <th class="t2">One or More</th>
+                <th class="t2">Between</th>
+                <th class="t2">At Least</th>
+                <th class="t2">At Most</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="text-right mt-2">Did you find a issue? Please report us at <a href="https://github.com/lopesrichard/regexlab/issues" target="_blank">github</a></p>
+    <br>
+    <h2>You may test your regex at: <a href="https://regex101.com/" target="_blank">Regex101</a></h2>
+  </div>
+
+  <script type="text/javascript" src="../assets/js/classes/Animator.min.js"></script>
+  <script type="text/javascript" src="../assets/js/classes/EventManager.min.js"></script>
+  <script type="text/javascript" src="../assets/js/classes/Fader.min.js"></script>
+  <script type="text/javascript" src="../assets/js/main.min.js"></script>
+  <script type="text/javascript" src="assets/js/main.min.js"></script>
+</body>
+</html>
