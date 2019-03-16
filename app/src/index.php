@@ -11,6 +11,10 @@
 </head>
 <body>
   <div class="container">
+        <div class="col-12 my-3 text-right">
+            <label for="fonts">Page Font: </label>
+            <select id="fonts"></select>
+        </div>
     <h1 class="title">Welcome to Regex Lab</h1>
     <p class="description">Just choose an application<p>
     <br>
@@ -26,5 +30,6 @@
       <p class="powered float-right">Powered by <a href="https://github.com/lopesrichard" alt="Richard Lopes" target="_blank">Richard Lopes</a></p>
     </div>
   </div>
+  <script type="text/javascript" src="assets/js/main.min.js"></script>
 </body>
 </html>

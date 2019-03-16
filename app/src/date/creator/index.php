@@ -12,6 +12,10 @@
 </head>
 <body>
   <div class="container">
+        <div class="col-12 my-3 text-right">
+            <label for="fonts">Page Font: </label>
+            <select id="fonts"></select>
+        </div>
     <h1 class="title">Regex Date Creator</h1>
     <p class="description">Just complete the 3 steps below and see the magic<p>
     <form id="date-regex-form">
@@ -99,6 +103,7 @@
 
   <script type="text/javascript" src="../../assets/js/classes/Ajax.min.js"></script>
   <script type="text/javascript" src="../../assets/js/classes/Clipboard.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/main.min.js"></script>
   <script type="text/javascript" src="assets/js/main.min.js"></script>
 </body>
 </html>

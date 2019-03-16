@@ -1,5 +1,3 @@
-const html = document.querySelector('html');
-const body = document.querySelector('body');
 const form = document.getElementById('date-regex-form');
 
 const load = document.createElement('div');

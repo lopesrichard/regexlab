@@ -11,6 +11,10 @@
 </head>
 <body>
   <div class="container">
+        <div class="col-12 my-3 text-right">
+            <label for="fonts">Page Font: </label>
+            <select id="fonts"></select>
+        </div>
     <h1 class="title">Regex Number Range</h1>
     <p class="description">Just type and have fun<p>
     <form>
@@ -42,6 +46,7 @@
 
   <script type="text/javascript" src="../../assets/js/classes/Ajax.min.js"></script>
   <script type="text/javascript" src="../../assets/js/classes/Clipboard.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/main.min.js"></script>
   <script type="text/javascript" src="assets/js/main.min.js"></script>
 </body>
 </html>

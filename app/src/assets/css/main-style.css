@@ -1,4 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+@import url("https://use.typekit.net/rfm3fxi.css");
+
+/* FONT LIST */
+.flower  { font-family: 'Indie Flower', cursive !important; }
+.times   { font-family: 'Times New Roman', Times, serif !important; }
+.roboto  { font-family: 'Roboto', sans-serif !important; }
+.ubuntu  { font-family: 'Ubuntu', sans-serif !important; }
+.slabo   { font-family: 'Slabo 27px', sans-serif !important; }
+.courier { font-family: "courier-std",monospace !important; }
 
 body {
     font-family: 'Indie Flower', cursive;
