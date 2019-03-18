@@ -24,11 +24,18 @@ table tbody {
 }
 
 .t1 {
-  background-color: rgb(83, 27, 136);
+  background-color: blueviolet;
+  font-size: 1.2em;
 }
 
 .t2 {
-  background-color: rgb(147, 48, 240);
+  background: rgb(250, 250, 250);
+  font-weight: bold;
+  color: #8A2BE2;
+}
+
+.code {
+  background-color: #282c34;
 }
 
 .range-slider {

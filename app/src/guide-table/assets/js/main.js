@@ -3,59 +3,54 @@ const tableGreedy     = document.getElementById('table-greedy');
 const tableReluctant  = document.getElementById('table-reluctant');
 const tablePossessive = document.getElementById('table-possessive');
 const tableMethods    = document.getElementById('table-methods');
+const tableExamples   = document.getElementById('table-examples');
 
-const tables  = [tableMethods, tableMain, tableGreedy, tableReluctant, tablePossessive];
-
-const options = {
-    php: {
-        show: 'PHP (PCRE)',
-        main: ['\\', '^', '$', '.', '[ ]', '[^]', '\\b', '|', '( )', '\\1'],
-        greedy: ['?', '*', '+', '{x, y}', '{x, }', '{, y}'],
-        reluctant: ['??', '*?', '+?', '{x, y}?', '{x, }?', '{, y}?'],
-        possessive: ['?+', '*+', '++', '{x, y}+', '{x, }+', '{, y}+'],
-        methods: ['preg_match | preg_match_all', 'preg_replace', 'preg_split', '\'\' (inside simple quotes)', 'By Default'],
-    },
-    java: {
-        show: 'Java',
-        main: ['\\\\', '^', '$', '.', '[ ]', '[^]', '\\\\b', '|', '( )', '\\\\1'],
-        greedy: ['?', '*', '+', '{x, y}', '{x, }', '{, y}'],
-        reluctant: ['??', '*?', '+?', '{x, y}?', '{x, }?', '{, y}?'],
-        possessive: ['?+', '*+', '++', '{x, y}+', '{x, }+', '{, y}+'],
-        methods: ['Matcher.matches | Matcher.find', 'Matcher.replaceFirst | Matcher.replaceAll', 'Pattern.split', 'Doesn\'t have'],
-    },
-};
+const ajax = new Ajax('api/v1.php');
+ajax.success(function(response){
+    changeName(response);
+    changeTable(response);
+    slider.addEventListener('input', function() {
+        spanAnimator.zoom(1.2);
+        changeName(response);
+        changeTable(response);
+    });
+}).get('json');
 
 const slider       = document.getElementById('range-slider');
 const input        = slider.querySelector('input');
 const span         = slider.querySelector('span');
 const spanAnimator = new Animator(span, 300);
 
-changeName();
-changeTable();
-
-slider.addEventListener('input', function() {
-    spanAnimator.zoom(1.2);
-    changeName();
-    changeTable();
-});
-
-function changeName() {
+function changeName(options) {
     span.textContent = Object.values(options)[input.value - 1].show;
 }
 
-function changeTable() {
-    changeContentTable(tableMethods, 'methods');
-    changeContentTable(tableMain, 'main');
-    changeContentTable(tableGreedy, 'greedy');
-    changeContentTable(tableReluctant, 'reluctant');
-    changeContentTable(tablePossessive, 'possessive');
+function changeTable(options) {
+    changeContentTable(options, tableMethods, 'methods');
+    changeContentTable(options, tableExamples, 'examples');
+    changeContentTable(options, tableMain, 'main');
+    changeContentTable(options, tableGreedy, 'greedy');
+    changeContentTable(options, tableReluctant, 'reluctant');
+    changeContentTable(options, tablePossessive, 'possessive');
+    highlightCode();
 }
 
-function changeContentTable(table, propertyName) {
+function changeContentTable(options, table, propertyName) {
     fader = new Fader(0.5);
     table.style = '';
     fader.fade(table, 0, 100, true);
     table.querySelectorAll('td').forEach(function(td, i) {
-        td.textContent = Object.values(options)[input.value - 1][propertyName][i];
+        td.innerHTML = Object.values(options)[input.value - 1][propertyName][i];
+    });
+}
+
+setTimeout(function(){
+    highlightCode();
+}, 100);
+
+function highlightCode() {
+    document.querySelectorAll('code').forEach((block) => {
+        block.parentNode.parentNode.classList.add('code');
+        hljs.highlightBlock(block);
     });
 }
