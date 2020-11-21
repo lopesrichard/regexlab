@@ -48,23 +48,23 @@ class DateRegexCreator
         $regex[$keys[3]]  = '('  . ($group ? '?<day>' : '')   . '0' . ($zeros ? '' : '?') . '[1-9]|1[0-9]|2[0-8])';
         $regex[$keys[4]]  =        ($separator);
         $regex[$keys[5]]  = '('  . ($group ? '?<month>' : '') . '0' . ($zeros ? '' : '?') . '[1-9]|1[0-2])';
-        $regex[$keys[6]]  = '|'; 
+        $regex[$keys[6]]  = '|';
         $regex[$keys[7]]  = '('  . ($group ? '?<day>' : '')   . '29|30)';
         $regex[$keys[8]]  =        ($separator);
         $regex[$keys[9]]  = '('  . ($group ? '?<month>' : '') . '0' . ($zeros ? '' : '?') . '(?!2)(?:[1-9])|1[0-2])';
         $regex[$keys[10]]  = '|';
         $regex[$keys[11]] = '('  . ($group ? '?<day>' : '')   . '31)';
-        $regex[$keys[12]] =        ($separator); 
+        $regex[$keys[12]] =        ($separator);
         $regex[$keys[13]] = '('  . ($group ? '?<month>' : '') . '0' . ($zeros ? '' : '?') . '[13578]|1[02])';
-        $regex[$keys[14]] = ')'; 
-        $regex[$keys[15]] =        ($separator); 
-        $regex[$keys[16]] = '('  . ($group ? '?<year>' : '')  . '(?:' . $year['pre'] . ')' . ($full ? '' : '?') . '(?:' . $year['pos'] . '))'; 
-        $regex[$keys[17]] = '|';  
-        $regex[$keys[18]] = '('  . ($group ? '?<day>' : '')   . '29)'; 
-        $regex[$keys[19]] =        ($separator); 
-        $regex[$keys[20]] = '('  . ($group ? '?<month>' : '') . '0' . ($zeros ? '' : '?') . '2)'; 
-        $regex[$keys[21]] =        ($separator); 
-        $regex[$keys[22]] = '('  . ($group ? '?<year>' : '')  . '(?:' . $year['pre'] . ')' . ($full ? '' : '?') . '(?=[02468][048]|[13579][26])' . '(?:'. $year['pos'] . '))'; 
+        $regex[$keys[14]] = ')';
+        $regex[$keys[15]] =        ($separator);
+        $regex[$keys[16]] = '('  . ($group ? '?<year>' : '')  . '(?:' . $year['pre'] . ')' . ($full ? '' : '?') . '(?:' . $year['pos'] . '))';
+        $regex[$keys[17]] = '|';
+        $regex[$keys[18]] = '('  . ($group ? '?<day>' : '')   . '29)';
+        $regex[$keys[19]] =        ($separator);
+        $regex[$keys[20]] = '('  . ($group ? '?<month>' : '') . '0' . ($zeros ? '' : '?') . '2)';
+        $regex[$keys[21]] =        ($separator);
+        $regex[$keys[22]] = '('  . ($group ? '?<year>' : '')  . '(?:' . $year['pre'] . ')' . ($full ? '' : '?') . '(?=[02468][048]|[13579][26])' . '(?:'. $year['pos'] . '))';
         $regex[$keys[23]] = '))' . ($border ? '\b' : '$');
 
         ksort($regex, SORT_NUMERIC);
@@ -88,10 +88,11 @@ class DateRegexCreator
 
     private function getSmallYear($from, $to)
     {
-        $url = 'https://regex-lab.herokuapp.com/number/range/api/v1.php';
+        $url = 'number/range/api/v1.php';
 
-        if ($from <= $to)
+        if ($from <= $to) {
             return $ret = json_decode(file_get_contents($url."/{$from}/{$to}"), true);
+        }
 
         $ret = json_decode(file_get_contents($url."/{$from}/99"), true);
         $ret['regex'] .= '|' . json_decode(file_get_contents($url."/00/{$to}"), true)['regex'];

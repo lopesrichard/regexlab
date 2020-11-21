@@ -15,17 +15,16 @@ $app->post('/', function (Request $request, Response $response, array $args) {
     $date = new Regex($params);
     $date->validate();
     $result = $date->getRegex();
-    return $response->withHeader('Access-Control-Allow-Origin', 'https://regex-lab.herokuapp.com/')
-                    ->withJson(['status' => 'true', 'regex' => $result]);
+    return $response->withJson(['status' => 'true', 'regex' => $result]);
 });
 
 $app->run();
 
-function configureErrorHandlers(\Slim\Container $c) {
+function configureErrorHandlers(\Slim\Container $c)
+{
     $c['errorHandler'] = function ($c) {
         return function ($request, $response, $exception) use ($c) {
             return $response->withStatus(500)
-                ->withHeader('Access-Control-Allow-Origin', 'https://regex-lab.herokuapp.com/')
                 ->withJson(['status' => 'false', 'error' => $exception->getMessage()]);
         };
     };
@@ -33,7 +32,6 @@ function configureErrorHandlers(\Slim\Container $c) {
     $c['notAllowedHandler'] = function ($c) {
         return function ($request, $response, $methods) use ($c) {
             return $response->withStatus(405)
-                ->withHeader('Access-Control-Allow-Origin', 'https://regex-lab.herokuapp.com/')
                 ->withJson(['success' => false, 'message' => 'Method not allowed']);
         };
     };
@@ -41,7 +39,6 @@ function configureErrorHandlers(\Slim\Container $c) {
     $c['notFoundHandler'] = function ($c) {
         return function ($request, $response) use ($c) {
             return $response->withStatus(404)
-                ->withHeader('Access-Control-Allow-Origin', 'https://regex-lab.herokuapp.com/')
                 ->withJson(['success' => false, 'message' => 'Page not found']);
         };
     };
@@ -49,7 +46,6 @@ function configureErrorHandlers(\Slim\Container $c) {
     $c['phpErrorHandler'] = function ($c) {
         return function ($request, $response, $error) use ($c) {
             return $response->withStatus(500)
-                ->withHeader('Access-Control-Allow-Origin', 'https://regex-lab.herokuapp.com/')
                 ->withJson(['status' => 'false', 'error' => $error->getMessage()]);
         };
     };
